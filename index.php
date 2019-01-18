@@ -1,8 +1,7 @@
 <?php
 
 require 'vendor/autoload.php';
-echo "private";
-exit;
+
 $app = new \Slim\App;
 $app->get('/hello/{name}', function (Request $request, Response $response, array $args) {
     $name = $args['name'];

@@ -2,16 +2,15 @@
 
 require 'vendor/autoload.php';
 
-function ServiceHandler() {
-    $data = new stdClass();
-    $data->Output = "Hello James!". date("Y");
-
-    return json_encode($data);
-};
-
 $app = new \Slim\App;
+$app->get('/hello/{name}', function (Request $request, Response $response, array $args) {
+    $name = $args['name'];
+    $response->getBody()->write("Hello, $name");
 
-$app->get('/', 'ServiceHandler');
-$app->post('/', 'ServiceHandler');
-
+    return $response;
+});
 $app->run();
+
+//scoreit.cuf1z38zdshp.eu-west-2.rds.amazonaws.com
+//scoreit_db
+//BHr0Pyftr3aCcbzQqeep

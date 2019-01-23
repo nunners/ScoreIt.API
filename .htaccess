@@ -1,5 +1,4 @@
 Options +FollowSymLinks
-SetEnv WebitServer AWSStage
 #mod_rewrite
 RewriteEngine on
 RewriteCond %{REQUEST_FILENAME} !-d

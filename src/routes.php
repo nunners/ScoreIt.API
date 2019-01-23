@@ -2,7 +2,7 @@
 // Routes
 
 $app->get('/test', function () {
-    phpinfo();
+    echo ("Hello test!");
 });
 
 $app->get('/signin/:username/:password', function ($username, $password) {

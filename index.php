@@ -5,6 +5,10 @@ $app = new \Slim\App;
 $app->get('/foo', function () {
     echo "Foo!";
 });
+
+$app->get('/signin', function () {
+    echo ("here we are!");
+});
 $app->run();
 
 echo (getenv('WebitServer'));

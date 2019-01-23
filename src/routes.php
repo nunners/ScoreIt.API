@@ -1,10 +1,11 @@
 <?php
 // Routes
 
-$app->get('/[{name}]', function ($request, $response, $args) {
-    // Sample log message
-    $this->logger->info("Slim-Skeleton '/' route");
+$app->get('/test', function () {
+    phpinfo();
+});
 
-    // Render index view
-    return $this->renderer->render($response, 'index.phtml', $args);
+$app->get('/signin/:username/:password', function ($username, $password) {
+    echo ("Username:".$username."<br />");
+    echo ("Password:".$password."<br />");
 });

@@ -1,16 +1,11 @@
 <?php
 require 'vendor/autoload.php';
 
-$app = new \Slim\App;
-$app->get('/test', function () {
-    phpinfo();
-});
+// Instantiate the app
+$settings = require __DIR__ . '/src/settings.php';
+$app = new \Slim\App($settings);
 
-$app->get('/signin/:username/:password', function ($username, $password) {
-    echo ("Username:".$username."<br />");
-    echo ("Password:".$password."<br />");
-});
+// Register routes
+require __DIR__ . '/src/routes.php';
+
 $app->run();
-//scoreit.cuf1z38zdshp.eu-west-2.rds.amazonaws.com
-//scoreit_db
-//BHr0Pyftr3aCcbzQqeep

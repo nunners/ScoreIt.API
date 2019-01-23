@@ -9,6 +9,15 @@ return [
             'template_path' => __DIR__ . '/../templates/',
         ],
 
+        // Database settings
+        'database'               => [
+            'host'      => getenv('MySQL_hostname'),
+            'database'  => getenv('MySQL_database'),
+            'username'  => getenv('MySQL_username'),
+            'password'  => getenv('MySQL_password'),
+            'port'      => 3306,
+        ],
+
         // Monolog settings
         'logger' => [
             'name' => 'slim-app',

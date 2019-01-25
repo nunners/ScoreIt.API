@@ -16,3 +16,7 @@ $app->get('/api', function () {
     echo "api";
 });
 
+$app->get('/', function () {
+    echo "homepage";
+});
+

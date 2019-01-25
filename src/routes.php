@@ -13,10 +13,10 @@ $app->get('/signin/{username}/{password}', function ($request, $response,$args) 
 
 });
 $app->get('/api', function () {
-    echo "api";
+    $newResponse = $oldResponse->withJson(array("status"=>"success","message"=>"Success :)"));
 });
 
 $app->get('/', function () {
-    echo "homepage";
+    $newResponse = $oldResponse->withJson(array("status"=>"error","message"=>"no command"));
 });
 

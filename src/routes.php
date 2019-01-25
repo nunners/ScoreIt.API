@@ -5,13 +5,10 @@ $app->get('/test', function () {
     echo ("Hello test!");
 });
 
-$app->get('/signin/:username/:password', function ($username, $password) {
-    echo ("Username:".$username."<br />");
-    echo ("Password:".$password."<br />");
+$app->get('/signin', function () {
+    echo "signin";
+});
+$app->get('/api', function () {
+    echo "api";
 });
 
-$app->get('/',
-    function (Request $request, Response $response, array $args) {
-        // Render index view
-        return $this->renderer->render($response, 'index.phtml', $args);
-    });

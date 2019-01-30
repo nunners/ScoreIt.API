@@ -5,10 +5,8 @@ $app->get('/test', function () {
     echo ("Hello test!");
 });
 
-$app->get('/authenticate/{username}/{password}', function ($request, $response,$args) {
+$app->get('/authenticate/{username}/{password}', function ($username, $password) {
     echo "signin";
-    print_r($args);
-    print_r($request);
-    print_r($response);
+    echo ($username."/".$password);
 
 });

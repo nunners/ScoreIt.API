@@ -7,6 +7,7 @@ $app->get('/test', function () {
 
 $app->get('/authenticate/{username}/{password}', function ($username, $password) {
     echo "signin";
-    echo ($username."/".$password);
+    print_r($username);
+    print_r($password);
 
 });

@@ -19,10 +19,10 @@ class database extends mysqli
         $this->database = $dbSettings->database["host"];
         $this->username = $dbSettings->database["host"];
         $this->password = $dbSettings->database["host"];
-        parent::__construct($this->host, $this->username, $this->password, $this->database);
-        if (mysqli_connect_error()) {
-            die('Connect Error (' . mysqli_connect_errno() . ') '
-                . mysqli_connect_error());
+        $this->link = new mysqli($this->host, $this->username, $this->password, $this->database);
+        if ($this->link->connect_error()) {
+            die('Connect Error (' . $this->link->connect_errno() . ') '
+                . $this->link->connect_error());
             exit;
         } else {
             return true;

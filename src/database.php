@@ -6,8 +6,7 @@
  * Time: 11:15
  */
 
-class database extends mysqli
-{
+class database {
     private $host = "";
     private $database = "";
     private $username = "";

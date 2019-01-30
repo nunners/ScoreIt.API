@@ -19,8 +19,8 @@ class database extends mysqli
         $this->database = $dbSettings->database["host"];
         $this->username = $dbSettings->database["host"];
         $this->password = $dbSettings->database["host"];
-        $this->link = new mysqli($this->host, $this->username, $this->password, $this->database);
-        if ($this->link->connect_error()) {
+
+        if ($this->link = mysql_connect ($this->host, $this->username, $this->password, $this->database)) {
             die('Connect Error (' . $this->link->connect_errno() . ') '
                 . $this->link->connect_error());
             exit;

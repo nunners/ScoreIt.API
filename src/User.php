@@ -31,7 +31,32 @@ class User
 
         print_r($this->database->fetch($result));
 
-        return true;
+        return $this;
 
+    }
+
+    private function getUserId($field, $variable) {
+
+        $result = $this->database->select(array("id"), "users", "WHERE `".$this->database->escape($field)."` = ".$this->database->escape($variable) );
+
+        if ($this->database->numRows($result)==1) {
+
+            $row = $this->database->fetch($result);
+            return $row['id'];
+
+        } else {
+
+            return false;
+            
+        }
+
+    }
+
+    public function Authenticate ($email, $password) {
+
+        $id = $this->getUserId("email",$email);
+        $this->setUser($id);
+
+        return $this;
     }
 }

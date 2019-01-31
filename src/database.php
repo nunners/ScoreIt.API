@@ -60,9 +60,19 @@ class database {
 
     }
 
-    public function escape ($variable) {
+    public function escape ($variable, $includeQuotes = true) {
 
-        return $this->database->escape_string($variable);
+        if ($includeQuotes) {
+
+            return "'" . $this->database->escape_string($variable) . "'";
+
+        } else {
+
+            return $this->database->escape_string($variable);
+
+        }
+
+
 
     }
 

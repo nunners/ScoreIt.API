@@ -9,13 +9,13 @@ $app->get('/test', function () {
     phpinfo();
 });*/
 
-$app->get('/authenticate/{username}/{password}', function ($request, $response) {
+$app->get('/authenticate/{email}/{password}', function ($request, $response) {
     $user = new User ($database);
 
-    $username = $request->getAttribute('username');
-    $password = $request->getAttribute('username');
+    $email = $request->getAttribute('email');
+    $password = $request->getAttribute('password');
 
-    $user->Authenticate($username,$password);
+    $user->Authenticate($email,$password);
 
     return true;
 });

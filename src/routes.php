@@ -10,9 +10,12 @@ $app->get('/test', function () {
 });*/
 
 $app->get('/authenticate/{username}/{password}', function ($request, $response) {
-    echo "signin";
+    $user = new User ($database);
+
     $username = $request->getAttribute('username');
     $password = $request->getAttribute('username');
-    echo ($username."/".$password);
+
+    $user->Authenticate($username,$password);
+
     return true;
 });

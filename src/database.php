@@ -14,14 +14,15 @@ class database {
     public $link;
 
     public function __construct($dbSettings) {
-        $this->host = $dbSettings->database["host"];
-        $this->database = $dbSettings->database["host"];
-        $this->username = $dbSettings->database["host"];
-        $this->password = $dbSettings->database["host"];
+        $this->host     = $dbSettings["host"];
+        $this->database = $dbSettings["database"];
+        $this->username = $dbSettings["username"];
+        $this->password = $dbSettings["password"];
 
-        if ($this->link = mysql_connect ($this->host, $this->username, $this->password, $this->database)) {
-            die('Connect Error (' . $this->link->connect_errno() . ') '
-                . $this->link->connect_error());
+        $this->link = new mysqli ($this->host, $this->username, $this->password, $this->database);
+        if ($this->link->connect_errno) {
+            die('Connect Error (' . $this->link->connect_errno . ') '
+                . $this->link->connect_error);
             exit;
         } else {
             return true;

@@ -8,7 +8,7 @@ $settings = require __DIR__ . '/src/settings.php';
 $app = new \Slim\App($settings);
 
 require __DIR__ . '/src/database.php';
-$database = new Database($settings);
+$database = new Database($settings['settings']['database']);
 
 // Register routes
 require __DIR__ . '/src/routes.php';
